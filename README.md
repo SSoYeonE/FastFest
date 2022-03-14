@@ -838,4 +838,4 @@ data += '<button class="btn2" style="cursor:zoom-in" onclick="location.href='+ma
   }
   ```
 
-- de1(소연) + mainpage(원웅) 머지해서 깃에 올림 
+- dev1(소연) + mainpage(원웅) 머지해서 깃에 올림 
