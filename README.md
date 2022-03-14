@@ -821,7 +821,7 @@ data += '<button class="btn2" style="cursor:zoom-in" onclick="location.href='+ma
   -------------------------------------------------------------------------------
     <div class="button-1" style="margin-top:10px" onclick="window.history.back(document.referrer);">
       <div class="eff-1"></div>
-      <a href="#"> 뒤로가기 </a>
+      <a href="#"> 뒤로가기 </a>          //버튼 자체에 효과 줌
     </div>
   
   ```
@@ -838,6 +838,4 @@ data += '<button class="btn2" style="cursor:zoom-in" onclick="location.href='+ma
   }
   ```
 
-  
-
-  
+- de1(소연) + mainpage(원웅) 머지해서 깃에 올림 
