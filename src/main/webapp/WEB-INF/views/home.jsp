@@ -173,7 +173,7 @@
 	        </form>
 	       </div>
 	        <div class="col-sm-4" > 
-				<a href="https://google.com">
+				<a href="http://localhost:8080/FastFest/calendar">
 	  		<img src="<%=request.getContextPath() %>/resources/images/calender.png" class="img-fluid rounded">
 	  		</a>
 		  		

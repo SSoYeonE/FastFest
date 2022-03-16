@@ -14,6 +14,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -33,7 +34,7 @@
 	<input type="hidden" name="id"  id="id" value=""/>
 	<input type="hidden" name="seq" id="seq" value=""/>
 
-    <div class="container" style="margin-top:100px;">
+    <div class="container" style="margin-top:100px;font-family: 'Dongle', sans-serif; font-size:20pt">
         <h2>즐겨찾기 목록 (${totalCnt}건)</h2>
 
 

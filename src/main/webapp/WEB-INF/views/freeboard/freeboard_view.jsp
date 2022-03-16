@@ -13,6 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <%@include file="../include/nav.jsp" %>
@@ -31,7 +32,7 @@
       <input type="hidden" name="key"     value="<%=key%>" >
       <input type="hidden" name="keyword" value="<%=keyword%>" >
       
-    <div class="container" style="margin-top:100px;">
+    <div class="container" style="margin-top:100px;font-family: 'Dongle', sans-serif; font-size:20pt">
         <h2>게시판 상세보기</h2>
         <table class="table table-hover " style="margin-top:30px;">
             <tbody>
@@ -61,23 +62,23 @@
            
            <%}else{%>
            		<div  style="margin-right:1px;">
-				<button type="button" class="btn btn-warning " id="like_btn" onclick="updateLike()">추천 <%=dto.getLikehit() %></button>
+				<button type="button" class="btn btn-warning " id="like_btn" onclick="updateLike()" style="width:80px;height:40px;font-size:15pt">추천 <%=dto.getLikehit() %></button>
            <%} %>
 	       
 
 		 </div>
 
           <div class="container mt-3" style="text-align:right;">
-            <a href="#none" onclick="goList()" class="btn btn-secondary">목록</a>
-            <a href="#none" onclick="goReply()" class="btn btn-secondary">답글달기</a>
+            <a href="#none" onclick="goList()" class="btn btn-secondary" style="width:80px;height:40px;font-size:15pt">목록</a>
+            <a href="#none" onclick="goReply()" class="btn btn-secondary" style="width:80px;height:40px;font-size:15pt">답글달기</a>
 
             <%if(userid.equals(dto.getUserid())) {%>
-            <a href="#none" onclick="goModify()" class="btn btn-secondary">수정</a>
-            <a href="#none" onclick="goDelete()" class="btn btn-secondary">삭제</a>
+            <a href="#none" onclick="goModify()" class="btn btn-secondary" style="width:80px;height:40px;font-size:15pt">수정</a>
+            <a href="#none" onclick="goDelete()" class="btn btn-secondary" style="width:80px;height:40px;font-size:15pt">삭제</a>
             <% }%>
             <%if(!userid.equals("")) {%>
-         	<a href="#none" onclick="golike()" class="btn btn-secondary" id ="btn_like">즐겨찾기</a>
-         	<a href="#none" onclick="golikelist()" class="btn btn-secondary" id ="btn_like">즐겨찾기목록</a>
+         	<a href="#none" onclick="golike()" class="btn btn-secondary" id ="btn_like" style="width:80px;height:40px;font-size:15pt">즐겨찾기</a>
+         	<a href="#none" onclick="golikelist()" class="btn btn-secondary" id ="btn_like" style="width:80px;height:40px;font-size:15pt">즐겨찾기목록</a>
 		  	<%}%>
           </div>
           
@@ -90,7 +91,7 @@
               </colgroup>
           <thead>
             <tr>
-              <th colspan="3"> 댓글</th>
+              <th colspan="3" style="width:80px;height:40px;font-size:15pt"> 댓글</th>
             </tr>
           </thead>
           <tbody >
@@ -104,11 +105,11 @@
              <input type="hidden" name="likeflag" id="likeflag" value="1" />
             
             <div class="mb-3" style="margin-top:13px;">
-               <textarea class="form-control" rows="3" id="comment" name="comment"></textarea>
+               <textarea class="form-control" rows="3" id="comment" name="comment" style="font-size:20px"></textarea>
             </div>
             
             <div class="container mt-3" style="text-align:right;" id="btnRegister">
-               <a href="#none" onclick="goCommentWrite()" class="btn btn-primary"
+               <a href="#none" onclick="goCommentWrite()" class="btn btn-primary" style="width:80px;height:40px;font-size:15pt"
                ><span id="btnCommentSave">댓글등록</span></a>
             </div>
        

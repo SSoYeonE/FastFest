@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
 <style>
 .ck.ck-editor {
     max-width: *;
@@ -35,10 +36,10 @@
 	<form  name="myform" method="post" enctype="multipart/form-data">	
 		<input type="hidden" name="id" value="<%=dto.getId()%>" />
 		
-    <div class="container" style="margin-top:100px;">
+    <div class="container" style="margin-top:100px; font-family: 'Dongle', sans-serif; font-size:30pt">
         <h2>갤러리 쓰기</h2>
 
-        <table class="table table-hover " style="margin-top: 30px;">
+        <table class="table table-hover " style="margin-top: 20px;font-size:20pt">
             <colgroup>
                 <col width="25%">
                 <col width="*">
@@ -50,7 +51,7 @@
                 <td>
                     <div class="mb-3" style="margin-top:13px;">
                         <input type="text" class="form-control" id="title" name="title" 
-                        placeholder="제목을 입력하세요" value="<%=dto.getTitle()%>">
+                        placeholder="제목을 입력하세요" value="<%=dto.getTitle()%>" style="font-size:20px">
                     </div>
                 </td>
               </tr>       
@@ -60,10 +61,10 @@
                     <div class="mb-3" style="margin-top:13px;">
                     	<%if(!dto.getWriter().equals("")) {%>
                         <input type="text" class="form-control" id="writer" name="writer" 
-                        placeholder="이름을 입력하세요" value="<%=dto.getWriter()%>">
+                        placeholder="이름을 입력하세요" value="<%=dto.getWriter()%>" style="font-size:20px">
                         <%}else{ %>
-                        <input type="text" class="form-control" id="writer" name="writer" 
-                        value="<%=userid%>" readOnly>
+                        <input type="text" class="form-control" style="font-size:20px" id="writer" name="writer" 
+                        value="<%=userid%>" readOnly >
                         <%} %>
                     </div>
                 </td>
@@ -72,7 +73,7 @@
                 <td>내용</td>
                 <td>
                     <div class="mb-3" style="margin-top:13px;">
-                      <textarea class="form-control" rows="5" id="comment" name="comment"><%=dto.getComment()%></textarea>
+                      <textarea class="form-control" rows="5" id="comment" name="comment" style="font-size:20px"><%=dto.getComment()%></textarea>
                     </div>
                 </td>
               </tr>    
@@ -91,11 +92,11 @@
             </tbody>
           </table>
        
-          <div class="container mt-3" style="text-align:right;">
+          <div class="container mt-3" style="text-align:right;font-size:50pt">
           <%if(!mode.equals("update")) {%>
-            <input type="button" class="btn btn-secondary" value="등록" onclick="goWrite()">
+            <input type="button" class="btn btn-secondary" value="등록" onclick="goWrite()" style="width:80px;height:40px;font-size:20pt">
             <%}else{ %>
-            <input type="button" class="btn btn-secondary" value="수정완료" onclick="goModify()">
+            <input type="button" class="btn btn-secondary" value="수정완료" onclick="goModify()" style="width:80px;height:40px;font-size:20pt">
             <%} %>
           </div>
           

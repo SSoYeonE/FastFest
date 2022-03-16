@@ -15,8 +15,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <%
 	String key = StringUtil.nullToValue(request.getParameter("key"), "1");
 	String keyword = StringUtil.nullToValue(request.getParameter("keyword"), "");
@@ -24,7 +26,7 @@
 	int totalCnt = (Integer)request.getAttribute("totalCnt");
 	List<GalleryDto> list = (List<GalleryDto>)request.getAttribute("galleryList");
 %> 
-
+<!--  style="font-family: 'Dongle', sans-serif; font-size:20pt" -->
 <%@include file="../include/nav.jsp" %>
 
 <form name="myform" method="get">
@@ -34,7 +36,7 @@
 	<input type="hidden" name="usernum" id="usernum" value="<%=id%>" />
 	
 
-    <div class="container" style="margin-top:100px;">
+    <div class="container" style="margin-top:100px; font-family: 'Dongle', sans-serif; font-size:20pt">
         <h2>게시판 목록 (${totalCnt}건)</h2>
 
         <div class="input-group mb-3" style="margin-top:20px;">
@@ -94,7 +96,7 @@
        	  
           <div class="container mt-3" style="text-align:right;">
             <a href="<%=request.getContextPath()%>/gallery/write" 
-               class="btn btn-secondary">글쓰기</a>
+               class="btn btn-secondary" style="width:80px;height:40px;font-size:15pt">글쓰기</a>
           </div>
           
     </div>
