@@ -83,8 +83,12 @@
 
 <script>
 function goWrite()
-{
-   
+{	var id = "<%=userid%>";
+	if(id == ""){
+	      alert("로그인하세요");
+	      location.href="${commonURL}/member/login";
+	      return false;
+	 }
    var frm = document.myform;
    if( frm.title.value.trim().length==0)
    {
@@ -127,6 +131,13 @@ function goWrite()
 
 function goModify(){
 	  var frm = document.myform;
+	  var id = "<%=userid%>";
+		if(id == ""){
+		      alert("로그인하세요");
+		      location.href="${commonURL}/member/login";
+		      return false;
+		 }
+	  
 	   if( frm.title.value.trim().length<10)
 	   {
 	      alert("제목을 10글자 이상 작성하세요");

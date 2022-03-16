@@ -144,6 +144,12 @@ function getImageName(){
 function goWrite()
 {
 	var frm = document.myform;
+	var id = "<%=userid%>";
+	if(id == ""){
+	      alert("로그인하세요");
+	      location.href="${commonURL}/member/login";
+	      return false;
+	 }
 	if( frm.title.value.trim().length==0)
 	{
 		alert("제목을 입력하세요");
@@ -172,6 +178,12 @@ function goWrite()
 
 function goModify(){
 	  var frm = document.myform;
+	  var id = "<%=userid%>";
+		if(id == ""){
+		      alert("로그인하세요");
+		      location.href="${commonURL}/member/login";
+		      return false;
+		 }
 	  if( frm.title.value.trim().length==0)
 		{
 			alert("제목을 입력하세요");
