@@ -12,7 +12,6 @@ public interface BoardService {
 	int getTotal(BoardDto dto);
 	void delete(String id);
 	void update(BoardDto dto);
-	
 	void comment_insert(CommentDto dto);
 	List<CommentDto> getCommentList(CommentDto dto);
 	
