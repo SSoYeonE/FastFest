@@ -357,7 +357,7 @@ function golike(){
 	   var flag = $("#likeflag").val();
 	   if(flag == "1"){
 		   $.ajax({
-			   url:"${commonURL}/gallery/like?board_id="+$("#board_id").val()+"&"+"userid="+$("#usernum").val(),
+			   url:"${commonURL}/gallery/like?board_id="+$("#board_id").val()+"&"+"userSeq="+$("#usernum").val(),
 			      type:"GET",
 			      dataType:"JSON"
 			   })
@@ -370,7 +370,7 @@ function golike(){
 	   }
 	   else{
 		   $.ajax({
-			   url:"${commonURL}/gallery/unlike?board_id="+$("#board_id").val()+"&"+"userid="+$("#usernum").val(),
+			   url:"${commonURL}/gallery/unlike?board_id="+$("#board_id").val()+"&"+"userSeq="+$("#usernum").val(),
 			      type:"GET",
 			      dataType:"JSON"
 			   })
