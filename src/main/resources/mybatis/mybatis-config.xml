@@ -18,6 +18,7 @@
     	<typeAlias alias="FestDataDto" type="com.woori.yourhome.calenmap.FestDataDto"/>
     	<typeAlias alias="Comment2Dto" type="com.woori.yourhome.comment2.Comment2Dto"/>	
     	<typeAlias alias="LikeDto" type="com.woori.yourhome.like.LikeDto"/>	
+    	<typeAlias alias="NoteDto" type="com.woori.yourhome.note.NoteDto"/>
 	</typeAliases>
 
 	<mappers>
@@ -32,6 +33,8 @@
 		<mapper resource=	"/com/woori/yourhome/mapper/Comment2.xml"/>		
 		<mapper resource=	"/com/woori/yourhome/mapper/Like.xml"/>		 
 
+		<mapper resource=	"/com/woori/yourhome/mapper/Calenmap.xml"/>		 
+		<mapper resource=	"/com/woori/yourhome/mapper/Note.xml"/>		
 	</mappers>
 	
 </configuration>
