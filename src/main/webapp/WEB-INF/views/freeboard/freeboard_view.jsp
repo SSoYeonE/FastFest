@@ -77,6 +77,7 @@
             <% }%>
             <%if(!userid.equals("")) {%>
          	<a href="#none" onclick="golike()" class="btn btn-secondary" id ="btn_like">즐겨찾기</a>
+         	<a href="#none" onclick="golikelist()" class="btn btn-secondary" id ="btn_like">즐겨찾기목록</a>
 		  	<%}%>
           </div>
           
@@ -123,6 +124,13 @@
 $(function(){
    goInit();
 });
+
+function golikelist(){
+	var frm = document.myform;
+	frm.action="<%=request.getContextPath()%>/like/list";
+	frm.submit();
+}
+
 
 function goList()
 {
