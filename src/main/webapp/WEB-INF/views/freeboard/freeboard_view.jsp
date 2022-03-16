@@ -299,13 +299,14 @@ function goCommentDelete(comment_id)
    if( !confirm("삭제하시겠습니까?"))
       return false;
    
-   var queryString = $("form[name=myform]").serialize(); 
+   var frmData = new FormData(document.myform);
    
    $.ajax({
-      url:"${commonURL}/comment/delete",
-      queryString,
-      type:"POST",
-      dataType:"json"
+	   url:"${commonURL}/comment/delete",
+	      data:frmData,
+	      contentType:false,
+	      processData:false,
+	      type:"POST",
    })
    .done( (result)=>{
       $("#comment").val("");
