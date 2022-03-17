@@ -114,36 +114,7 @@ window.onload=function(){
 	document.getElementById("searchItem").innerHTML=texts[key];
 	
 }
-<%-- function goInit(id){
-	var board_id = id;
-	 $.ajax({
-	        url:"${commonURL}/like/isDuplicate", //요청 url정보
-	        data:{like_boardId:board_id, like_boardType:"2", like_userId:$("#usernum").val()},   //서버로 전달할 데이터정보: JSON형태
-	        dataType:"json",  //결과를 jSON으로 받겠다. 결과가 text로 온다
-	        type:"POST"
-	     })
-	     .done((data)=>{
-	        //데이터가 정상적으로 수신되면 done메서드 호출되면서 매개변수는 전달받은 값
-	        //값은 dataType 속성을 안주면 text로 온다.
-	        console.log(data.result);
-	       if(data.result == "true") //중복
-	       {
-	    	   //return 1;
-	    	   $("#btnlike" + id).attr("src", "<%=request.getContextPath()%>/resources2/images/full_star.png");
-	    	   $("#likeon" + id).attr("onclick", "unlike("+board_id+")");
-				
-	       }
-	       else
-	       {
-	    	   $("#btnlike" + id).attr("src", "<%=request.getContextPath()%>/resources2/images/blank_star.png");
-	    	   $("#likeon" + id).attr("onclick", "golike("+board_id+")");
-	       }
-  })
-  .fail((error)=>{
-     //통신에러, 오류에 관한 것
-        console.log(error);
-  })
-} --%>
+
 
 function changeSearch(id)
 {
