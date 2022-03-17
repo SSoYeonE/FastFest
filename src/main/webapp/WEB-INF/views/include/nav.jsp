@@ -102,7 +102,6 @@ String userLevel=StringUtil.nullToValue(session.getAttribute("userLevel"),"");	/
                             <li><a href="http://localhost:8080/FastFest/freeboard/list">자유게시판</a></li>
                             <li><a href="http://localhost:8080/FastFest/gallery/list">갤러리</a></li>
                             <li><a href="http://localhost:8080/FastFest/like/list">즐겨찾기</a></li>
-                            <li><a href="">Dropdown Menu</a></li>
                         </ul>
                     </li>
                     <li><a href="http://localhost:8080/FastFest/calendar">이달의 축제</a></li>
@@ -110,7 +109,7 @@ String userLevel=StringUtil.nullToValue(session.getAttribute("userLevel"),"");	/
                     
                     <%if(userid.equals("")) {%>
                     <li style="margin-right:60px"><a href="">로그인</a>
-                        <ul>
+                        <ul style = "background: #0067a3">
                             <li><a class="nav-link" href="${commonURL}/member/login">로그인</a>
            			</li>
                             <li><a class="nav-link" href="${commonURL}/member/join">회원가입</a>
@@ -119,7 +118,7 @@ String userLevel=StringUtil.nullToValue(session.getAttribute("userLevel"),"");	/
                     </li>
                     <%}else{%>
                     <li><a href="">내정보</a>
-                        <ul>
+                        <ul style = "background: #0067a3">
                             <li><a class="nav-link" href="${commonURL}/member/myinfo">내정보</a>
            			</li>
                             <li><a class="nav-link" href="${commonURL}/member/logout">로그아웃</a>
