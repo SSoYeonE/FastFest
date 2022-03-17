@@ -14,6 +14,7 @@
     	<typeAlias alias="MemberDto" type="com.woori.yourhome.member.MemberDto"/>	
     	<typeAlias alias="CommentDto" type="com.woori.yourhome.comment.CommentDto"/>	
     	<typeAlias alias="MainDto" type="com.woori.yourhome.main.MainDto"/>
+    	<typeAlias alias="Main2Dto" type="com.woori.yourhome.main2.Main2Dto"/>
     	<typeAlias alias="DateDto" type="com.woori.yourhome.calenmap.DateDto"/>
     	<typeAlias alias="FestDataDto" type="com.woori.yourhome.calenmap.FestDataDto"/>
     	<typeAlias alias="Comment2Dto" type="com.woori.yourhome.comment2.Comment2Dto"/>	
@@ -29,6 +30,7 @@
 		<mapper resource=	"/com/woori/yourhome/mapper/Member.xml"/>		
 		<mapper resource=	"/com/woori/yourhome/mapper/Comment.xml"/>
 		<mapper resource=	"/com/woori/yourhome/mapper/Main.xml"/>	 
+		<mapper resource=	"/com/woori/yourhome/mapper/Main2.xml"/>	
 		<mapper resource=	"/com/woori/yourhome/mapper/Calenmap.xml"/>
 		<mapper resource=	"/com/woori/yourhome/mapper/Comment2.xml"/>		
 		<mapper resource=	"/com/woori/yourhome/mapper/Like.xml"/>		 

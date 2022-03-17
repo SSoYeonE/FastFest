@@ -7,6 +7,7 @@
 <%@page import="java.util.*" %>
 <%@page import="com.woori.yourhome.common.*" %>
 <%@page import="com.woori.yourhome.main.*" %>
+<%@page import="com.woori.yourhome.main2.*" %>
 <html>
 <head>
 
@@ -32,6 +33,9 @@
 <% String key = StringUtil.nullToValue(request.getParameter("key"), "1");
 	String keyword = StringUtil.nullToValue(request.getParameter("keyword"), "");
 	String pg = StringUtil.nullToValue(request.getParameter("pg"), "0");
+	
+	
+	
 %>
 
 	<%@include file="./include/nav.jsp"%>
@@ -108,36 +112,34 @@
 			</div>
 		</section>
 
-
-	<div class="container pt-6" style="margin-bottom:30px" > 	
+<%List<Main2Dto> lists = (List<Main2Dto>)request.getAttribute("main2List");%>
+		<form name="myform2" method="get">
+		<input type="hidden" name="id"  id="id" value=""/>
+		<input type="hidden" name="pg"      value="<%=pg%>" >
+		<input type="hidden" name="key"     value="<%=key%>" >
+		<input type="hidden" name="keyword" value="<%=keyword%>" >
+	<div class="container pt" style="display:flex; flex-direction:row; align-items: center; margin-bottom:30px; margin-left:530px" > 	
 		<div class="row"> 
-		
-			<div class="col-sm-3"> 
-			<a href="https://google.com">
-	  		<img src="<%=request.getContextPath() %>/resources/images/boardgallery.jpg" class="img-fluid rounded">
-	  		</a>
-	        </div>
-	       
-	        <div class="col-sm-3"> 
-			<a href="https://google.com">
-	  		<img src="<%=request.getContextPath() %>/resources/images/boardgallery.jpg" class="img-fluid rounded">
-	  		</a>
-	        </div>
-	       
-	        <div class="col-sm-3"> 
-			<a href="https://google.com">
-	  		<img src="<%=request.getContextPath() %>/resources/images/boardgallery.jpg" class="img-fluid rounded">
-	  		</a>
-	        </div>
-	       
-	        <div class="col-sm-3"> 
-			<a href="https://google.com">
-	  		<img src="<%=request.getContextPath() %>/resources/images/boardgallery.jpg" class="img-fluid rounded">
-	  		</a>
-	        </div>
+		 
+		 <%
+		 for( Main2Dto dto : lists){ %>
+            <div class="col-sm-3" style="margin-right:0px !important">
+              <div class="container">
+                <a href="#none" onclick="goView2('<%=dto.getId()%>')">
+                  <img src="<%=request.getContextPath() %>/upload/<%=dto.getImage()%>" alt="no_image" style="width:200px; height:200px; object-fit:contain; border: 1px solid; border-color:#C9C9C9">
+		</a>
+		</div>
+		</div>
+		<%} %>
+			
 	       
 	     </div>	       
 	  </div>
+	  </form>
+
+
+
+	
 	       
 	<div class="container pt" style="display:flex; flex-direction:row" > 
 		 
@@ -155,17 +157,21 @@
 	<form name="myform" method="get">
 	<input type="hidden" name="key" id="key" value="<%=key%>"/>
 	<input type="hidden" name="pg"  id="pg" value="<%=pg%>"/>
-	<input type="hidden" name="seq" id="seq" value=""/>        
-			<br>notice<br>
-		   <table class="table table-hover" style="margin-top:-100px">	   
+	<input type="hidden" name="note_seq" id="note_seq" value=""/>        
+			
+		   <table class="table table-hover" >	
+		   <br>notice
+		   <br>	
 		    <tbody>
             <%            
             List<MainDto> list = (List<MainDto>)request.getAttribute("mainList");
            	for(MainDto tempDto : list){
             %>
-              <tr>     
-                <td><a href="#none" onclick="goView('<%=tempDto.getSeq()%>')" ><%=tempDto.getTitle()%></a></td>
-                <br>
+             
+              <tr>
+				  
+                <td><a href="#none"  onclick="goView('<%=tempDto.getNote_seq()%>')"  style="text-decoration:none; color:black;"><%=tempDto.getNote_title()%></a></td>
+
               </tr>
             <%}%>
             </tbody>
@@ -200,12 +206,21 @@
     <script src="<%=request.getContextPath() %>/resources/js/main.js"></script> 
     
     <script>
-  function goView(id)
+    function goView(id)
     {
-    	frm = document.myform;
-    	frm.seq.value=id;///////////
+    	let frm=document.myform;
+    	frm.note_seq.value=id;
     	frm.method="get";
-    	frm.action="${pageContext.request.contextPath}/freeboard/view";
+    	frm.action="${pageContext.request.contextPath}/note/view";
+    	frm.submit();
+    }
+  
+    function goView2(id)
+    {
+    	frm = document.myform2;
+    	frm.id.value=id;///////////
+    	frm.method="get";
+    	frm.action="${pageContext.request.contextPath}/gallery/view";
     	frm.submit();
     }
     
