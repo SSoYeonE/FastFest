@@ -13,7 +13,7 @@
 
 
 
-<title>Home</title>
+
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -111,22 +111,26 @@
 				</div>
 			</div>
 		</section>
-
+		
+	<div class="container">
+		<br>gallery
+	</div>
 <%List<Main2Dto> lists = (List<Main2Dto>)request.getAttribute("main2List");%>
 		<form name="myform2" method="get">
 		<input type="hidden" name="id"  id="id" value=""/>
 		<input type="hidden" name="pg"      value="<%=pg%>" >
 		<input type="hidden" name="key"     value="<%=key%>" >
 		<input type="hidden" name="keyword" value="<%=keyword%>" >
-	<div class="container pt" style="display:flex; flex-direction:row; align-items: center; margin-bottom:30px; margin-left:530px" > 	
+	<div class="container pt" style="display:flex; flex-direction:row; align-items: center; margin-bottom:30px; " >
+	
 		<div class="row"> 
-		 
+		 <br><br>
 		 <%
 		 for( Main2Dto dto : lists){ %>
             <div class="col-sm-3" style="margin-right:0px !important">
               <div class="container">
                 <a href="#none" onclick="goView2('<%=dto.getId()%>')">
-                  <img src="<%=request.getContextPath() %>/upload/<%=dto.getImage()%>" alt="no_image" style="width:200px; height:200px; object-fit:contain; border: 1px solid; border-color:#C9C9C9">
+                  <img src="<%=request.getContextPath() %>/upload/<%=dto.getImage()%>" alt="no_image" style="width:200px; height:200px; margin-left:20px; object-fit:contain; border: 1px solid; border-color:#C9C9C9">
 		</a>
 		</div>
 		</div>
@@ -179,6 +183,7 @@
 	        </form>
 	       </div>
 	        <div class="col-sm-4" > 
+	        <br>calendar
 				<a href="http://localhost:8080/FastFest/calendar">
 	  		<img src="<%=request.getContextPath() %>/resources/images/calender.png" class="img-fluid rounded">
 	  		</a>
