@@ -860,4 +860,5 @@ data += '<button class="btn2" style="cursor:zoom-in" onclick="location.href='+ma
 → z-index로는 배너 링크가 안먹어서 area 영역을 줄여줌
 
 - footer이미지 삽입	
+	
   ![하단6](https://user-images.githubusercontent.com/95202440/158953999-ccb52437-5382-44b5-a378-28bd254dec8c.png)
