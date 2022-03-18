@@ -1,7 +1,9 @@
 # FastFest
+
 지능형 5조
 
 ## 220221
+
 * 주제 선정 (전국 각지의 축제에 대한 정보 및 날짜 제공)
 * 프로젝트 기획안 작성
 * 상세 메뉴 선정
@@ -20,6 +22,7 @@
   * 구현방법 계획 및 이미지 검색
 
 ## 220224 
+
 - dev1 브랜치 생성
 
 - '축제' 엑셀 데이터 작성
@@ -37,6 +40,7 @@
 - 지도 관련 이미지 png => svg 로 확정
 
 ## 220225
+
 - 메인 화면 디자인 수정
 
 ![FF_a](https://user-images.githubusercontent.com/95202440/155688977-76b15980-48a4-4fd7-9df1-10b38f61bbea.png)
@@ -55,7 +59,7 @@
 
     - 지역별 색상
 
-    -  마우스오버&아웃기능추가
+    - 마우스오버&아웃기능추가
 
       ```javascript
       //제주
@@ -87,8 +91,9 @@
       
 
   - 향후 과제
+
     - <a href> 링크 수정하기
-    -  하단 리스트 기능 추가
+    - 하단 리스트 기능 추가
 
 ![지도12](https://user-images.githubusercontent.com/95202440/155957588-75ac9ee8-f772-400f-acfa-8b1f3ac3e27d.png)
 
@@ -156,7 +161,7 @@
 - 달력에 지역별 다른색상의 ●표시, 축제명&end날짜 툴팁표기 
 
   - (CalendarController.java)
-  
+
   ```javascript
   List<FestDataDto> list = service.getList(searchDto);
   Map<String, String> colorMap = new HashMap<String, String>();
@@ -184,7 +189,7 @@
       }
   }
   ```
-  
+
   - (calendar.css) : 툴팁 기본코드
 
    ```java script
@@ -219,7 +224,7 @@
    ```
 
   - (Calendarmap.xml) : 날짜에서 '-' 기호 빼고 년&월 만 가져오기
-  
+
     
 
 ```
@@ -247,10 +252,10 @@
 ![지도툴팁기능](https://user-images.githubusercontent.com/95202440/156756655-b013e697-c40d-495c-98b6-a5f51e9b2ad3.JPG)
 
 - 향후과제
-	- ~~툴팁글씨체(깨져보여서) , 전체 글씨체 변경~~
-	- ~~확대된 지도 수정하기~~
-	- ~~지도의 지역명 마다 링크~~
-		- ~~하단에 이미지와 함께 리스트로 출력~~
+  - ~~툴팁글씨체(깨져보여서) , 전체 글씨체 변경~~
+  - ~~확대된 지도 수정하기~~
+  - ~~지도의 지역명 마다 링크~~
+    - ~~하단에 이미지와 함께 리스트로 출력~~
 
 
 
@@ -385,7 +390,7 @@ $('#group1').attr("transform", "scale(0.6,0.6)");    //글자크기
 ```
 
 - 달력크기(폰트)  전체적으로 조금 키우기 - style의 body
-  
+
   - (calendar.jsp)
 
 ```javascript
@@ -696,6 +701,7 @@ body{
 - 지도를 볼수있는 링크넣기 (이미지로)
 
   - (board.css)
+
 ```css
   .btn2 {
       border: 0;
@@ -711,38 +717,37 @@ data += '<button class="btn2" style="cursor:zoom-in" onclick="location.href='+ma
 ```
 
   - (map.jsp)
-  
-    ```javascript
- const map_url = "'/yourhome/calendar/kakaomap?addr="+item.fes_ADDRESS+"&fes_name="+ item.fes_NAME+"'"; 
-    const mapimage_url = "'/yourhome/resources/images/별.png'";
-    ```
--------------------------------------------------------------
-      data += '<button class="btn2" onclick="location.href='+map_url+'" type="button"><img src='+mapimage_url+' class="image2"></button>'
-    ```
 
-  - board.jsp - mapview()함수 생성
-  
-    ```javascript
-     function mapview(addr){
+```javascript
+ 	const map_url = "'/yourhome/calendar/kakaomap?addr="+item.fes_ADDRESS+"&fes_name="+ item.fes_NAME+"'"; 
+    const mapimage_url = "'/yourhome/resources/images/별.png'";
+-------------------------------------------------------------
+    data += '<button class="btn2" onclick="location.href='+map_url+'" type="button"><img src='+mapimage_url+' class="image2"></button>'
+```
+
+  - (board.jsp) - mapview()함수 생성
+
+ ```javascript
+    function mapview(addr){
     	 frm = document.myform;
     	 	frm.addr.value=addr;///////////
     	 	frm.method="get";
     	 	frm.action="${pageContext.request.contextPath}/calendar/kakaomap";
     	 	frm.submit();
      }
-    ```
-  
+ ```
+
   - CalendarController.java파일 - RequestMapping("/calendar/kakaomap") 부분 구현
 
   - 향후과제
 
-      - ~~축제 리스트에서 지도보기 이미지위로 올렸을때 마우스 커서모양 바꾸기~~
-      - ~~(map.jsp) - zoom-in커서로 바꾸기~~
-      - ~~지도보기에서 축제장소도 올리~~기
-      - ~~뒤로가기버튼 마진주기~~
-      - (kakaomap.jsp)
-      - ~~카드 사이즈 조금 늘이기~~
-          - ~~margin-left :10px;~~
+    - ~~축제 리스트에서 지도보기 이미지위로 올렸을때 마우스 커서모양 바꾸기~~
+    - ~~(map.jsp) - zoom-in커서로 바꾸기~~
+    - ~~지도보기에서 축제장소도 올리~~기
+    - ~~뒤로가기버튼 마진주기~~
+    - (kakaomap.jsp)
+    - ~~카드 사이즈 조금 늘이기~~
+      - ~~margin-left :10px;~~
 
     ## 220310
 
@@ -756,14 +761,14 @@ data += '<button class="btn2" style="cursor:zoom-in" onclick="location.href='+ma
 
   - 뒤로가기버튼 마진주기
 
-      - (kakaomap.jsp)
+    - (kakaomap.jsp)
 
-        ```javascript
-          <div class="button-1" style="margin-top:10px">
-            <div class="eff-1"></div>
-            <a href="javascript:window.history.back();"> 뒤로가기 </a>
-          </div>
-        ```
+      ```javascript
+        <div class="button-1" style="margin-top:10px">
+          <div class="eff-1"></div>
+          <a href="javascript:window.history.back();"> 뒤로가기 </a>
+        </div>
+      ```
 
 - 카드 사이즈 조금 늘이기(높이)
 
@@ -839,3 +844,21 @@ data += '<button class="btn2" style="cursor:zoom-in" onclick="location.href='+ma
   ```
 
 - dev1(소연) + mainpage(원웅) 머지해서 깃에 올림 
+
+## 220317
+
+ 달력 다음달로 안넘어가는 버그 수정 (배너 제일 뒤로 고정)
+
+- (nav.jsp)
+
+```javascript
+<div class="logo_area" style="display:flex; z-index:-10">
+```
+
+## 220318	
+
+→ z-index로는 배너 링크가 안먹어서 area 영역을 줄여줌
+
+- footer이미지 삽입	
+	
+  ![하단6](https://user-images.githubusercontent.com/95202440/158953999-ccb52437-5382-44b5-a378-28bd254dec8c.png)
