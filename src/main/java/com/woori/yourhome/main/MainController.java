@@ -26,7 +26,7 @@ public class MainController {
    String Main_list(MainDto dto, Model model, HttpServletRequest request, Main2Dto dto2)
    {
 	 
-	   dto.setPageSize(6);
+	   dto.setPageSize(7);
 	      dto.setStart(0);
       model.addAttribute("mainList", service.getList(dto));
       //model.addAttribute("mainList", service.getList(dto));
