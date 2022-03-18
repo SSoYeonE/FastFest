@@ -90,7 +90,7 @@ String userLevel=StringUtil.nullToValue(session.getAttribute("userLevel"),"");	/
     </head>
     <body>
         <div id="main_menu" style="display:flex;">
-            <div class="logo_area" style="display:flex;">
+            <div class="logo_area" style="display:flex; z-index:-10">
                 <a href="http://localhost:8080/FastFest/" style="height:150px;"><img src="<%=request.getContextPath()%>/resources/images/logo3.png" alt="" style="height:230px; margin-top:-20px; margin-left:20px; display:flex;"></a>
             </div>
            <div class="inner_main_menu">
