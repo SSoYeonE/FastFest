@@ -711,16 +711,16 @@ data += '<button class="btn2" style="cursor:zoom-in" onclick="location.href='+ma
 ```
 
   - (map.jsp)
-  
+ 
     ```javascript
  const map_url = "'/yourhome/calendar/kakaomap?addr="+item.fes_ADDRESS+"&fes_name="+ item.fes_NAME+"'"; 
     const mapimage_url = "'/yourhome/resources/images/별.png'";
-    ```
+   
 -------------------------------------------------------------
       data += '<button class="btn2" onclick="location.href='+map_url+'" type="button"><img src='+mapimage_url+' class="image2"></button>'
     ```
 
-  - board.jsp - mapview()함수 생성
+  - (board.jsp) - mapview()함수 생성
   
     ```javascript
      function mapview(addr){
@@ -839,3 +839,16 @@ data += '<button class="btn2" style="cursor:zoom-in" onclick="location.href='+ma
   ```
 
 - dev1(소연) + mainpage(원웅) 머지해서 깃에 올림 
+
+## 220317
+ 달력 다음달로 안넘어가는 버그 수정 (배너 제일 뒤로 고정)
+
+- (nav.jsp)
+
+```javascript
+<div class="logo_area" style="display:flex; z-index:-10">
+```
+## 220318	
+→ z-index로는 배너 링크가 안먹어서 area 영역을 줄여줌
+- footer이미지 삽입	
+![하단6](https://user-images.githubusercontent.com/95202440/158953999-ccb52437-5382-44b5-a378-28bd254dec8c.png)
