@@ -196,9 +196,10 @@
 
 <footer class="bg-light text-center text-lg-start">
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); margin-top:200px; ">
-
-  </div>
+  <!-- <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); margin-top:200px; ">-->
+	<hr style="margin-top:60px">
+	<img src="<%=request.getContextPath()%>/resources/images/하단6.png" align="center">
+  
   <!-- Copyright -->
 </footer>
 
@@ -229,6 +230,7 @@
     }
     
     </script>           
+
 
 
 </body>
