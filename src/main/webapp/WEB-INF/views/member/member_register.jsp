@@ -23,7 +23,7 @@
 			<div class="duplicate">
 			<input type="hidden" name="idcheck" id="idcheck" value="N" />
 			<input type="text" class="form-control" placeholder="아이디" name="user_id" id="user_id">
-			<button type="button" id="btnDuplicate">중복체크</button>
+			<button type="button" id="btnDuplicate" style="font-size:13px">중복체크</button>
 			</div>
 			<%
 			} else {
