@@ -84,7 +84,7 @@
 					<tr>
 					<td><%=totalCnt - tempDto.getRnum()+1 %></td>
 			            <td><a href="#none"  onclick="goView('<%=tempDto.getNote_seq()%>')"  style="text-decoration:none; color:black;"><%=tempDto.getNote_title()%></a></td>
-						<td><%=userid %></td>
+						<td><%=tempDto.getNote_userid() %></td>
 						<td><%=tempDto.getNote_regdate() %></td>
 						<td><%=tempDto.getNote_hit() %></td>
 					</tr>
